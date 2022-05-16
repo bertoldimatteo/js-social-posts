@@ -88,9 +88,8 @@ const container = document.getElementById("container");
 // scorro array di oggetti
 for ( let i = 0; i < posts.length; i++) {
     printPost(container, posts[i]);
-
-    const likeButton = document.querySelector(".likes__cta");
-    likeButton.addEventListener("click", function(){
-        alert("button pressed")
-    })
 }
+const likeButton = document.querySelector("div .likes__cta");
+likeButton.addEventListener("click", function(){
+    alert("button pressed")
+})
