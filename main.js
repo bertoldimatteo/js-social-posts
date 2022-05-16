@@ -83,9 +83,14 @@ function printPost(container, Userpost) {
 const container = document.getElementById("container"); 
 
 // creo collegamento con il bottone like
-const likeButton = document.querySelector(".js-like-button");
+
 
 // scorro array di oggetti
 for ( let i = 0; i < posts.length; i++) {
     printPost(container, posts[i]);
+
+    const likeButton = document.querySelector(".likes__cta");
+    likeButton.addEventListener("click", function(){
+        alert("button pressed")
+    })
 }
