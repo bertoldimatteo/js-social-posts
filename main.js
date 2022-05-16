@@ -1,6 +1,6 @@
 const posts = [
     {
-        "id": 1,
+        id: 1,
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/300?image=171",
         author: {
@@ -11,7 +11,7 @@ const posts = [
         created: "2021-06-25"
     },
     {
-        "id": 2,
+        id: 2,
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=112",
         author: {
@@ -22,7 +22,7 @@ const posts = [
         created: "2021-09-03"
     },
     {
-        "id": 3,
+        id: 3,
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=234",
         author: {
@@ -33,7 +33,7 @@ const posts = [
         created: "2021-05-15"
     },
     {
-        "id": 4,
+        id: 4,
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=24",
         author: {
@@ -44,7 +44,7 @@ const posts = [
         created: "2021-04-03"
     },
     {
-        "id": 5,
+        id: 5,
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=534",
         author: {
@@ -67,33 +67,36 @@ const posts = [
 // 3. Al click su un pulsante "Mi Piace" di un post, se abbiamo già cliccato dobbiamo decrementare il contatore e cambiare il colore del bottone.
 
 // function
-function printPost(container, Userpost) {
+function printPost(container, userPost) {
 
 
     const post = document.getElementById("post").content.cloneNode(true);
-    post.querySelector(".post__image img").src = Userpost.media;
-    post.querySelector(".post-meta__author").innerHTML = Userpost.author.name;
-    post.querySelector(".profile-pic").src = Userpost.author.image;
-    post.querySelector(".js-likes-counter").innerHTML = Userpost.likes;
-    post.querySelector(".post-meta__time").innerHTML = Userpost.created;
-    container.append(post);
+    post.querySelector(".post").id = userPost.id;
+    post.querySelector(".post__image img").src = userPost.media;
+    post.querySelector(".post-meta__author").innerHTML = userPost.author.name;
+    post.querySelector(".profile-pic").src = userPost.author.image;
+    post.querySelector(".js-likes-counter").innerHTML = userPost.likes;
+    post.querySelector(".post-meta__time").innerHTML = userPost.created;
+    container.appendChild(post);
 }
 
 // collegamento container dove aggiunto post
 const container = document.getElementById("container"); 
 
-// creo collegamento con il bottone like
-
-
 // scorro array di oggetti
 for ( let i = 0; i < posts.length; i++) {
     printPost(container, posts[i]);
-}
-const likeButton = document.querySelectorAll(".js-like-button");
-const likeNumber = document.querySelectorAll(".likes__counter .js-likes-counter");
 
-for ( let i = 0; i < likeButton.length; i++) {
-    likeButton[i].addEventListener("click", function() {
-        likeButton[i].classList.add("like-button--liked")
+    const likeButton = document.querySelectorAll(".js-like-button");
+    for ( let i = 0; i < likeButton.length; i++) {
+    const el = likeButton[i];
+    const likeNumber = document.querySelector(".js-likes-counter");
+    el.addEventListener("click", function() {
+        el.classList.add("like-button--liked");
+        likeNumber.innerHTML = posts[i].likes + 1;
     }); 
 }
+}
+
+
+
