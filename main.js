@@ -89,7 +89,10 @@ const container = document.getElementById("container");
 for ( let i = 0; i < posts.length; i++) {
     printPost(container, posts[i]);
 }
-const likeButton = document.querySelector("div .likes__cta");
-likeButton.addEventListener("click", function(){
-    alert("button pressed")
-})
+const likeButton = document.querySelectorAll(".likes__cta");
+
+for ( let i = 0; i < likeButton.length; i++) {
+    likeButton[i].addEventListener("click", function() {
+        alert("Button pressed");
+    })
+}
