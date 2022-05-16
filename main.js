@@ -4,8 +4,8 @@ const posts = [
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/300?image=171",
         author: {
-            "name": "Phil Mangione",
-            "image": "https://unsplash.it/300/300?image=15"
+            name: "Phil Mangione",
+            image: "https://unsplash.it/300/300?image=15"
         },
         likes: 80,
         created: "2021-06-25"
@@ -15,8 +15,8 @@ const posts = [
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=112",
         author: {
-            "name": "Sofia Perlari",
-            "image": "https://unsplash.it/300/300?image=10"
+            name: "Sofia Perlari",
+            image: "https://unsplash.it/300/300?image=10"
         },
         likes: 120,
         created: "2021-09-03"
@@ -26,8 +26,8 @@ const posts = [
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=234",
         author: {
-            "name": "Chiara Passaro",
-            "image": "https://unsplash.it/300/300?image=20"
+            name: "Chiara Passaro",
+            image: "https://unsplash.it/300/300?image=20"
         },
         likes: 78,
         created: "2021-05-15"
@@ -37,8 +37,8 @@ const posts = [
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=24",
         author: {
-            "name": "Luca Formicola",
-            "image": null
+            name: "Luca Formicola",
+            image: null
         },
         likes: 56,
         created: "2021-04-03"
@@ -48,8 +48,8 @@ const posts = [
         content: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         media: "https://unsplash.it/600/400?image=534",
         author: {
-            "name": "Alessandro Sainato",
-            "image": "https://unsplash.it/300/300?image=29"
+            name: "Alessandro Sainato",
+            image: "https://unsplash.it/300/300?image=29"
         },
         likes: 95,
         created: "2021-03-05"
@@ -82,12 +82,8 @@ function printPost(container, Userpost) {
 // collegamento container dove aggiunto post
 const container = document.getElementById("container"); 
 
-// creo collegamento classi html su js
-// const postImage = document.querySelector(".post__imag img");
-// const postAuthor = document.querySelector(".post-meta__author");
-// const postAuthorPic = document.querySelector(".profile-pic");
-// const postLike = document.querySelector("#like-counter-1");
-// const postDate = document.querySelector(".post-meta__time");
+// creo collegamento con il bottone like
+const likeButton = document.querySelector(".js-like-button");
 
 // scorro array di oggetti
 for ( let i = 0; i < posts.length; i++) {
